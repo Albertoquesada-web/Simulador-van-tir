@@ -80,7 +80,7 @@ edited_df["Flujo Neto ($)"] = edited_df["Ingresos ($)"] - edited_df["Egresos ($)
 flujos_completo = [-inversion_inicial] + edited_df["Flujo Neto ($)"].tolist()
 
 # 3. Calcular VAN (NPV)
-van = npf.net_present_value(tasa_descuento / 100, flujos_completo)
+van = npf.npv(tasa_descuento / 100, flujos_completo)
 
 # 4. Calcular TIR (IRR)
 # Nota: La TIR puede no tener solución matemática en ciertos flujos atípicos
